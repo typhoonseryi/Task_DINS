@@ -43,7 +43,7 @@ def form_json_queryset(mode, count):
         if len_page == 0:
             return 'Incorrect game mode'
         if count == -1:
-            json_queryset = json_page
+            return json_page
         else:
             pages = math.ceil(count / len_page)
             if count <= len_page:
@@ -60,10 +60,9 @@ def form_json_queryset(mode, count):
                 count -= len_page
                 json_pages.extend(json_page)
                 page_cnt += 1
-            json_queryset = json_pages
+            return json_pages
     except (json.decoder.JSONDecodeError, KeyError):
         return 'Something went wrong. Try again'
-    return json_queryset
 
 
 @click.command()
