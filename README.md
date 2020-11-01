@@ -1,1 +1,2 @@
-# Task_DINS
+# leaderboard
+Command-line приложение позволяет:
