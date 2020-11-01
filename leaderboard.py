@@ -46,7 +46,7 @@ def form_json_queryset(mode, count):
             json_queryset = json_page
         else:
             pages = math.ceil(count / len_page)
-            if pages == 1:
+            if count <= len_page:
                 json_queryset = json_page[:count]
                 return json_queryset
             count -= len_page
